@@ -7,7 +7,7 @@ const page = () => {
         <AuthForm
             types="SIGN-IN"
             schema={signInSchema}
-            defaultValueslues={{
+            defaultValues={{
                 email: '',
                 password: '',
             }}
