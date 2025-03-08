@@ -45,7 +45,16 @@ const ImageUpload = () => {
                 fileName="test-upload.png"
             />
 
-            <button className="upload-btn">
+            <button
+                className="upload-btn"
+                onClick={(e) => {
+                    e.preventDefault();
+                    if (ikUploadRef.current) {
+                        //@ts-ignore
+                        ikUploadRef.current?.click();
+                    }
+                }}
+            >
                 <Image
                     src='/icons/upload.svg'
                     alt="upload-icon"
@@ -53,8 +62,24 @@ const ImageUpload = () => {
                     height={20}
                     className="object-contain"
                 />
+
+                <p className="text-base text-light-100">Upload a File</p>
+
+                {file && <p className="upload-filename">{file.filePath}</p>}
             </button>
-        </ImageKitProvider>
+
+            {
+                file && (
+                    <IKImage
+                        alt={file.filePath}
+                        path={file.filePath}
+                        width={500}
+                        height={500}
+
+                    />
+                )
+            }
+        </ImageKitProvider >
     );
 };
 
