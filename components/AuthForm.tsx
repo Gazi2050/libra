@@ -17,7 +17,8 @@ import { Input } from "./ui/input";
 import Link from "next/link";
 import path from "path";
 import { FIELD_NAMES, FIELD_TYPES } from "@/constants";
-import ImageUpload from "./ImageUplode";
+import ImageUpload from "./ImageUpload";
+
 
 interface Props<T extends FieldValues> {
     schema: ZodType<T>;
